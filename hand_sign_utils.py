@@ -12,10 +12,10 @@ def count_fingers(hand_landmarks, handedness):
     # ----- Thumb detection (uses x-axis because thumb extends sideways) -----
     if handedness == "Right":
         # For the right hand, the thumb tip (4) should be to the *left* of its base joint (3)
-        is_thumb_extended = hand_landmarks.landmark[tip_ids[0]].x < hand_landmarks.landmark[tip_ids[0] - 1].x
+        is_thumb_extended = hand_landmarks.landmark[tip_ids[0]].x < hand_landmarks.landmark[tip_ids[0] - 2].x
     else:
         # For the left hand, the thumb tip (4) should be to the *right* of its base joint (3)
-        is_thumb_extended = hand_landmarks.landmark[tip_ids[0]].x > hand_landmarks.landmark[tip_ids[0] - 1].x
+        is_thumb_extended = hand_landmarks.landmark[tip_ids[0]].x > hand_landmarks.landmark[tip_ids[0] - 2].x
     
     fingers.append(1 if is_thumb_extended else 0)
 
