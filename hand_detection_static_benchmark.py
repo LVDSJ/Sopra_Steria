@@ -132,9 +132,11 @@ def evaluate_model():
     plt.title(f"Confusion Matrix (Acc: {accuracy:.2f}%, Prcs: {precision:.2f}%)")
     plt.tight_layout()
     plt.show()
+    plt.close('all')
 
 
 if __name__ == "__main__":
     evaluate_model()
     # Clean up the MediaPipe model
     gesture_recognizer.close()
+    hands.close()

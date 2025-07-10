@@ -2,7 +2,7 @@ import requests
 import base64
 
 # Encode the image as base64
-with open("images/peace_hand/will-smith-celebrity-skydivers.jpg", "rb") as img_file:
+with open("images/peace_sign/will-smith-celebrity-skydivers.jpg", "rb") as img_file:
     img_base64 = base64.b64encode(img_file.read()).decode("utf-8")
 
 payload = {
