@@ -36,7 +36,7 @@ with mp_hands.Hands(min_detection_confidence=0.7, min_tracking_confidence=0.5, m
 
                 # Gesture detection
                 fingers = count_fingers(hand_landmarks, handedness)
-                sign = detect_hand_sign(fingers, hand_landmarks)
+                sign = detect_hand_sign(fingers, hand_landmarks, handedness)
 
                 # Wave detection
                 wrist_x = hand_landmarks.landmark[0].x
