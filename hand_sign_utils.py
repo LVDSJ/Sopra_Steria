@@ -50,9 +50,9 @@ def detect_hand_sign(fingers, hand_landmarks, handedness, mediapipe_gesture=None
         # Only use high-confidence MediaPipe results
         if confidence > 0.5:
             if gesture_name == "Open_Palm":
-                return "Open hand"
+                return "Open Hand"
             elif gesture_name == "Victory":
-                return "Peace"
+                return "Peace Sign"
     
     # Landmarks
     index_tip = hand_landmarks.landmark[8]
@@ -66,10 +66,10 @@ def detect_hand_sign(fingers, hand_landmarks, handedness, mediapipe_gesture=None
 
     # --- Custom Gesture Checks ---
     if fingers == [0, 1, 1, 0, 0] and crossed:
-        return "Good Luck"
+        return "Good Luck Sign"
 
     if fingers == [1, 0, 0, 0, 1]:
-        return "Surf hand"
+        return "Surfing Sign"
 
     return None
     
