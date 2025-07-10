@@ -68,7 +68,7 @@ with mp_hands.Hands(min_detection_confidence=0.7,
                 motion_buffers[handedness].append(wrist_x)  # Store x-position in motion buffer
 
                 # Detect wave if hand is open and motion pattern fits
-                if sign == "Open hand" and detect_wave(motion_buffers[handedness]):
+                if sign == "Open Hand" and detect_wave(motion_buffers[handedness]):
                     sign = "Waving"
 
                 # Collect valid gesture for display
