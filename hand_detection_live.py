@@ -9,7 +9,7 @@ import mediapipe as mp
 mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils
 
-# Create an GestureRecognizer object.
+# Create an GestureRecognizer object
 base_options = mp.tasks.BaseOptions(model_asset_path='gesture_recognizer/gesture_recognizer.task')
 options = mp.tasks.vision.GestureRecognizerOptions(base_options=base_options)
 gesture_recognizer = mp.tasks.vision.GestureRecognizer.create_from_options(options)
@@ -19,7 +19,6 @@ motion_buffers = {"Left": deque(maxlen=30), "Right": deque(maxlen=30)}
 
 # Initiate video capture 
 cap = cv2.VideoCapture(0)
-
 
 # Initialize MediaPipe Hands
 with mp_hands.Hands(min_detection_confidence=0.7, 

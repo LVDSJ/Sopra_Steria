@@ -36,7 +36,7 @@ def predict():
             return jsonify({"error": "No image data provided"}), 400
 
         # Decode base64 image
-        image_data = data["image"].split(",")[1]  # remove 'data:image/...;base64,'
+        image_data = data["image"].split(",")[1] 
         decoded = base64.b64decode(image_data)
         image = Image.open(BytesIO(decoded)).convert("RGB")
         image_rgb = np.array(image)
